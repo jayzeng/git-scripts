@@ -7,4 +7,3 @@ branch=$2
 
 git rev-list --children $branch --not $commit^@ \
    | awk "/^$commit/ { print \$2 }"
-

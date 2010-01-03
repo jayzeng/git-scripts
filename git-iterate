@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# git-iterate
+#
+# Runs a script for every commit in a git repository
+# 
+# Example: git-iterate 'echo `flog -s app` `flog -s spec`'
+#
+# FIXME: unsafe regex
+git-filter-branch --tree-filter "$1" | sed s/Rewrite.*\)//g
